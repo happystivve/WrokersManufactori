@@ -1,0 +1,54 @@
+﻿<Window x:Class="WorkersManufactor.EditWorkers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkersManufactor"
+        mc:Ignorable="d"
+       Title="Добавить/Редактировать" Height="260" Width="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="Группа"
+                   FontFamily="Times New Roman"
+                   FontSize="20"/>
+            <ComboBox
+                ItemsSource="{Binding productTypes}"
+                SelectedItem="{Binding CurrentProduct.ProductType}"
+                FontFamily="Times New Roman"
+                FontSize="20">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Title}"
+                    FontFamily="Times New Roman"
+                               FontSize="20"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="ФИО"
+                   FontFamily="Times New Roman"
+                   FontSize="20"/>
+            <TextBox 
+                Height="30"
+                Text="{Binding CurrentProduct.Title}"
+                FontFamily="Times New Roman"
+                FontSize="20"/>
+        </StackPanel>
+        
+        <StackPanel VerticalAlignment="Bottom">
+            <Button
+                    x:Name="SaveButton" 
+                    Content="Сохранить"
+                    Click="SaveButton_Click"
+                    FontSize="30"
+                    FontFamily="Times New Roman"
+                    Background="Blue"/>
+            <Button 
+                    x:Name="BackButton"
+                    Content="Назад"
+                    Click="BackButton_Click"
+                    FontSize="30"
+                    FontFamily="Times New Roman"
+                    Background="Blue"/>
+        </StackPanel>
+    </Grid>
+</Window>
